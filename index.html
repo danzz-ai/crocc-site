@@ -59,6 +59,9 @@
       .nav-links{display:flex;align-items:center;gap:2px;flex:1;flex-wrap:wrap}
       .nav-links a{text-decoration:none;font-size:.9rem;font-weight:500;color:var(--ink-2);padding:9px 11px;border-radius:9px;min-height:36px;display:inline-flex;align-items:center}
       .nav-links a:hover{background:var(--bg-soft);color:var(--ink)}
+      .x-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;flex:none;border:1px solid var(--line);border-radius:11px;color:var(--ink);text-decoration:none;background:#fff;transition:background .12s ease,color .12s ease}
+      .x-btn svg{width:16px;height:16px;fill:currentColor}
+      .x-btn:hover{background:var(--ink);color:#fff}
       .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:11px;font-weight:600;font-size:.93rem;padding:11px 20px;min-height:44px;text-decoration:none;transition:transform .12s ease,background .12s ease}
       .btn:active{transform:scale(.98)}
       .btn-dark{background:var(--ink);color:#fff}
@@ -261,6 +264,10 @@
       .foot-grid a:hover{color:var(--ink)}
       .foot-brand p{color:var(--muted);font-size:.9rem;max-width:280px;margin:12px 0 0}
       .foot-base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:42px;padding-top:22px;border-top:1px solid var(--line);font-size:.83rem;color:var(--muted)}
+      .foot-base-right{display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap}
+      .foot-x{display:inline-flex;align-items:center;gap:7px;color:var(--ink);font-weight:600;text-decoration:none;min-height:28px}
+      .foot-x svg{width:14px;height:14px;fill:currentColor}
+      .foot-x:hover{text-decoration:underline}
 
       dialog{border:1px solid var(--line);border-radius:18px;padding:30px;max-width:440px;width:calc(100% - 40px);box-shadow:0 30px 80px rgba(0,0,0,.25)}
       dialog::backdrop{background:rgba(16,16,20,.45)}
@@ -345,6 +352,7 @@
           <a href="#token">$CROCC</a>
           <a href="#faq">FAQ</a>
         </div>
+        <a class="x-btn" href="https://x.com/croccrun" target="_blank" rel="noopener" aria-label="Crocc on X (@croccrun)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <button class="btn btn-dark" id="connectBtn" type="button">Connect wallet</button>
         <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -921,7 +929,7 @@
         </div>
         <div class="foot-base">
           <span>© 2026 Crocc. Built on Montra.</span>
-          <span>Per-second billing · Onchain receipts · 30% off at launch</span>
+          <span class="foot-base-right"><a class="foot-x" href="https://x.com/croccrun" target="_blank" rel="noopener" aria-label="Crocc on X (@croccrun)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@croccrun</a><span>Per-second billing · Onchain receipts · 30% off at launch</span></span>
         </div>
       </div>
     </footer>

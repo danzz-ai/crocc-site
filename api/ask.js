@@ -13,7 +13,7 @@ const MONTRA_NEW =
   "https://api.montramarkets.xyz/api/tokens?sort=new&limit=25";
 const MONTRA_TRENDING =
   "https://api.montramarkets.xyz/api/tokens?sort=trending&limit=25";
-const CROCC_CA = "0xd5c1b9aa9016fba63bd70203ff2253ee9efa7724";
+const CROCC_CA = "0x0c55159d703488077b16ab556e499ea1e38c4d92";
 const MONTRA_TOKEN = "https://api.montramarkets.xyz/api/tokens/" + CROCC_CA;
 const GEMINI_MODEL = "gemini-3.5-flash-lite";
 const GEMINI_URL =

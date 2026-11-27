@@ -21,7 +21,7 @@
   --glass-line:rgba(255,255,255,.13);
 }
 *{box-sizing:border-box}
-html,body{height:100%}
+html,body{height:100%;overflow-x:hidden;overflow-x:clip}
 body{margin:0;font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:#fff;background:#2f7fe0;-webkit-font-smoothing:antialiased;overflow:hidden}
 button{font-family:inherit;cursor:pointer;min-height:36px}
 ::selection{background:#bfe0ff}
@@ -145,9 +145,10 @@ body.light-mode .crocc-stats b{color:#0a2540}
 .hero-logo{width:46px;height:49px;object-fit:contain;filter:drop-shadow(0 6px 16px rgba(6,40,80,.35))}
 .hero h1{margin:8px 0 0;font-size:37px;font-weight:500;letter-spacing:-.015em;line-height:1.12;color:#fff;text-shadow:0 2px 22px rgba(15,45,95,.45)}
 .hero p{margin:10px 0 0;font-size:15.5px;line-height:1.5;font-weight:500;color:rgba(255,255,255,.95);max-width:470px;text-shadow:0 1px 14px rgba(15,45,95,.5)}
-.ca-pill{display:inline-flex;align-items:center;gap:8px;margin-top:14px;pointer-events:auto;background:rgba(10,37,64,.55);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 6px 6px 14px;color:#fff;font:inherit;font-size:13px;font-weight:600;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);cursor:pointer}
+.ca-pill{display:inline-flex;max-width:100%;min-width:0;align-items:center;gap:8px;margin-top:14px;pointer-events:auto;background:rgba(10,37,64,.55);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 6px 6px 14px;color:#fff;font:inherit;font-size:13px;font-weight:600;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);cursor:pointer}
 .ca-pill:hover{background:rgba(10,37,64,.7)}
-.ca-pill code{font-family:"JetBrains Mono",monospace;font-size:12px;color:#cfe4f7}
+/* the full 42-char address is wider than a phone screen: let the address shrink with an ellipsis instead of overflowing the page (copy still copies the full address from the element text) */
+.ca-pill code{font-family:"JetBrains Mono",monospace;font-size:12px;color:#cfe4f7;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ca-pill .ca-sym{color:#2bd97c;font-weight:800}
 .ca-pill .ca-copy{background:#fff;color:#0a2540;border:0;border-radius:999px;padding:5px 12px;font-weight:700;font-size:12px;font-family:inherit;cursor:pointer}
 .carousel-dots{display:none}
@@ -485,7 +486,8 @@ body.light-mode .wallet-addr{color:#33506e}
   .center-stack{width:min(520px, calc(100% - 40px))}
 }
 @media (max-width:900px){
-  body{overflow:auto}
+  /* never scroll sideways on phones: a wide child used to expose the blue body background as a strip on the right */
+  body{overflow-x:hidden;overflow-x:clip;overflow-y:auto}
   .os{height:auto;min-height:100dvh;overflow:visible}
   .canvas{display:flex;flex-direction:column;gap:16px;padding:10px 0 30px;overflow:visible}
   .topbar{padding:12px 16px 2px}

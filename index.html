@@ -576,9 +576,6 @@ body.light-mode .wallet-addr{color:#33506e}
         <img class="hero-logo" src="/assets/crocc-logo.png" alt="Crocc logo" />
         <h1>Hello, my name is Crocc.</h1>
         <p id="heroSub">Hold, send and swap on Montra, and ask for things in plain words. Crocc only spends inside limits you set.</p>
-        <button type="button" class="ca-pill" id="caPill" title="Copy the $CROCC contract address">
-          <span class="ca-sym">$CROCC</span><code id="croccCa">0xd5c1b9aa9016fba63bd70203ff2253ee9efa7724</code><span class="ca-copy" id="caCopyLabel">Copy</span>
-        </button>
       </header>
 
       <div class="win-track" id="winTrack">
@@ -2129,16 +2126,6 @@ document.getElementById("walletCloseX").addEventListener("click", function () { 
 })();
 
 /* ================= Montra-only boot ================= */
-$("caPill").addEventListener("click", function () {
-  var addr = $("croccCa").textContent.trim();
-  var done = function () {
-    $("caCopyLabel").textContent = "Copied ✓";
-    setTimeout(function () { $("caCopyLabel").textContent = "Copy"; }, 1800);
-  };
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(addr).then(done, function () { done(); });
-  } else { done(); }
-});
 loadTerminal();
 loadToken();
 loadChart();
